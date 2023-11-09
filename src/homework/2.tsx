@@ -1,9 +1,11 @@
 import { type } from "os";
 import React, { useReducer } from "react";
 
+type RequestStep = "idle" | "start" | "pending" | "finished";
+
 type State = {
   isRequestInProgress: boolean;
-  requestStep: string;
+  requestStep: RequestStep;
 };
 
 type Action =
@@ -14,7 +16,7 @@ type Action =
 
 const initialState: State = {
   isRequestInProgress: false,
-  requestStep: "RESET_REQUEST",
+  requestStep: "idle",
 };
 
 function requestReducer(state: State, action: Action): State {
