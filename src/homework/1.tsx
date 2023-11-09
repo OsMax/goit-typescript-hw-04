@@ -1,4 +1,3 @@
-import { type } from "os";
 import React, { useEffect, useRef } from "react";
 
 // Опишіть Props
